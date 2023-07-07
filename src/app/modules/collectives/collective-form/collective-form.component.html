@@ -1,0 +1,28 @@
+<h2 class="text-tittle-form">{{ tittle }}</h2>
+<form [formGroup]="collectiveForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Patente</mat-label>
+    <input matInput placeholder="Patente" formControlName="patente" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Cantidad de asientos</mat-label>
+    <input matInput placeholder="Cantidad de Asientos" type="number" formControlName="cantidadAsientos" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Marca</mat-label>
+    <mat-select formControlName="modeloId">
+      <mat-option value="">Seleccione un modelo</mat-option>
+      <mat-option *ngFor="let model of models" [value]="model.id">
+        {{ model.marca }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="button-detail">
+    <button mat-raised-button color="primary" type="submit">{{ buttonText }}</button>
+    <button mat-raised-button color="warn" (click)="closeModal()">Cancelar</button>
+  </div>
+</form>
+

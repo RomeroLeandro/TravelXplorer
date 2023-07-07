@@ -1,0 +1,43 @@
+
+<div class="container">
+  <mat-toolbar class="toolbar" color="primary">
+    <div class="navbar">
+
+      <button
+        (click)="drawer.toggle()"
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <p>TravelXplorer</p>
+    </div>
+  </mat-toolbar>
+
+  <div class="content">
+    <mat-drawer-container class="drawer-container">
+      <mat-drawer
+    [opened]="true"
+    #drawer
+    class="drawer"
+    mode="side"
+  >
+    <mat-nav-list class="links">
+      <a [routerLink]="link.path" mat-list-item *ngFor="let link of links">
+        <mat-icon *ngIf="link.icon">{{ link.icon }}</mat-icon>
+        {{ link.title }}
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+
+      <mat-drawer-content>
+        <main>
+          <router-outlet></router-outlet>
+        </main>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+</div>
+
+

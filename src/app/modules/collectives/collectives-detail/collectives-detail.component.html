@@ -1,0 +1,18 @@
+<h2 class="person-heading">Detalle del colectivo</h2>
+<div class="person-details">
+  <div class="person-info">
+    <mat-label class="person-label">Patente:</mat-label>
+    <p class="person-value">{{ collecive.patente }}</p>
+  </div>
+  <div class="person-info">
+    <mat-label class="person-label">Cantidad de asientos:</mat-label>
+    <p class="person-value">{{ collecive.cantidadAsientos }}</p>
+  </div>
+  <div class="person-info">
+    <mat-label class="person-label">N°:</mat-label>
+    <p class="person-value">{{ collecive.id }}</p>
+  </div>
+</div>
+<div class="close-button" >
+  <button mat-raised-button color="warn" [mat-dialog-close]="'close'">Cerrar</button>
+</div>

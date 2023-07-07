@@ -1,0 +1,39 @@
+<h2 class="trip-heading">Detalle del viaje</h2>
+<div class="trip-details">
+  <div class="trip-info">
+    <mat-label class="trip-label">Lugar de salida:</mat-label>
+    <p class="trip-value">{{ trip.lugarSalida }}</p>
+  </div>
+  <div class="trip-info">
+    <mat-label class="trip-label">Lugar de destino:</mat-label>
+    <p class="trip-value">{{ trip.lugarDestino }}</p>
+  </div>
+  <div class="trip-info">
+    <mat-label class="trip-label">Fecha de llegada:</mat-label>
+    <p class="trip-value">{{ trip.fechaLlegada }}</p>
+  </div>
+  <div class="trip-info">
+    <mat-label class="trip-label">Fecha de salida:</mat-label>
+    <p class="trip-value">{{ trip.fechaSalida }}</p>
+  </div>
+  <div class="trip-info">
+    <mat-label class="trip-label">Personas:</mat-label>
+    <ul>
+      <li *ngFor="let person of persons">{{ person.name }} {{ person.lastName }}</li>
+    </ul>
+  </div>
+  <div class="trip-info">
+    <mat-label class="trip-label">Colectivo:</mat-label>
+    <ng-container *ngIf="collective">
+      <p class="trip-value">{{ collective.patente }}</p>
+    </ng-container>
+    <ng-container *ngIf="!collective">
+      <p class="trip-value">No se encontró ningún colectivo</p>
+    </ng-container>
+  </div>
+</div>
+<div class="close-button">
+  <button mat-raised-button color="warn" (click)="closeModal()">Cerrar</button>
+</div>
+
+

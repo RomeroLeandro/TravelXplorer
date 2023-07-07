@@ -1,0 +1,20 @@
+<h2 class="person-heading">Detalle de la persona</h2>
+<div class="person-details">
+  <div class="person-info">
+    <mat-label class="person-label">Nombre:</mat-label>
+    <p class="person-value">{{ person.name }}</p>
+  </div>
+  <div class="person-info">
+    <mat-label class="person-label">Apellido:</mat-label>
+    <p class="person-value">{{ person.lastName }}</p>
+  </div>
+  <div class="person-info">
+    <mat-label class="person-label">Edad:</mat-label>
+    <p class="person-value">{{ person.age }}</p>
+  </div>
+</div>
+<div class="close-button" >
+  <button mat-raised-button color="warn" [mat-dialog-close]="'close'">Cerrar</button>
+</div>
+
+

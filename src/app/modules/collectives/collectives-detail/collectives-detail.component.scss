@@ -1,0 +1,39 @@
+.person-heading {
+  font-size: 24px;
+  margin: 20px;
+  text-align: center;
+}
+
+.person-details {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+}
+
+.person-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.person-label {
+  flex-basis: 120px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.person-value {
+  margin: 0;
+}
+
+.close-button {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

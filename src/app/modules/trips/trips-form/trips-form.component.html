@@ -1,0 +1,42 @@
+<h2 class="mat-h2">{{tittle}}</h2>
+
+<form [formGroup]="tripForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput type="text" formControlName="lugarSalida" placeholder="Lugar de Salida">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" formControlName="lugarDestino" placeholder="Lugar de Destino">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="date" formControlName="fechaLlegada" placeholder="Fecha de Llegada">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="date" formControlName="fechaSalida" placeholder="Fecha de Salida">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Colectivo</mat-label>
+    <mat-select formControlName="idColectivo">
+      <mat-option *ngFor="let collective of collectives" [value]="collective.id">
+        {{ collective.patente }} (Asientos: {{ collective.cantidadAsientos }})
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Personas</mat-label>
+    <mat-select formControlName="personaId" multiple>
+      <mat-option *ngFor="let person of persons" [value]="person.id">
+        {{ person.name }} {{ person.lastName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="button-detail">
+    <button mat-raised-button color="primary" type="submit">{{ buttonText }}</button>
+    <button mat-raised-button color="warn" (click)="closeModal()">Cancelar</button>
+  </div>
+</form>

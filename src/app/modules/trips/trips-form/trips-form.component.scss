@@ -1,0 +1,33 @@
+form {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  mat-form-field {
+    width: 80%;
+  }
+}
+
+.button-detail {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.text-tittle-form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.matt-form {
+  gap: 10px;
+}

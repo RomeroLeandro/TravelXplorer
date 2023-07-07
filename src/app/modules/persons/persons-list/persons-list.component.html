@@ -1,0 +1,53 @@
+<h2>PERSONAS</h2>
+<table mat-table [dataSource]="persons" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let person"> {{ person.name }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef> Apellido </th>
+    <td mat-cell *matCellDef="let person"> {{ person.lastName }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef> Edad </th>
+    <td mat-cell *matCellDef="let person"> {{ person.age }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef> Editar </th>
+    <td mat-cell *matCellDef="let person">
+      <button mat-icon-button color="basic" (click)="openPersonFormModal(true, person)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="detail">
+    <th mat-header-cell *matHeaderCellDef> Ver detalle </th>
+    <td mat-cell *matCellDef="let person">
+      <button mat-icon-button color="basic" (click)="openPersonDetailModal(person)">
+        <mat-icon>search</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+    <td mat-cell *matCellDef="let person">
+      <button mat-icon-button color="warn" (click)="deletePerson(person.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="['name', 'lastName', 'age', 'edit','detail', 'delete']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['name', 'lastName', 'age', 'edit','detail','delete'];"></tr>
+</table>
+<div class="button-detail">
+  <button mat-raised-button color="primary" (click)="openPersonFormModal(false)">Agregar persona</button>
+</div>
+
